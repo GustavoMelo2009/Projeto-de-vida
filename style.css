@@ -34,7 +34,10 @@ body {
 .titulo-principal span {
   color: var(--verde);
 }
-
+.ativo {
+  background-color: var(--botao-ativo);
+  border-bottom: 4px solid var(--verde);
+}
 .botao {
   font-family: "Crakra Petch", sans-serif;
   background-color: var(--botao-inativo);
