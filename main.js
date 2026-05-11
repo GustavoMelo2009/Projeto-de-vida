@@ -1,11 +1,14 @@
 const botoes = document.querySelectorAll(".botao");
+const abas = document.querySelectorAll(".aba-conteudo");
 
-for(let i=0;i <botoes.length;i++){
-    botoes[i].onclick = function(){
+botoes.forEach((botao, indice) => {
+    botao.addEventListener("click", () => {
+        // Remove classe ativa de todos os botões e abas
+        botoes.forEach(b => b.classList.remove("ativo"));
+        abas.forEach(a => a.classList.remove("ativo"));
         
-        for(let j=0;j<botoes.length;j++){
-            botoes[j].classList.remove("ativo");
-        }
-        botoes[i].classList.add("ativo");
-    }
-}
+        // Adiciona classe ativa ao botão clicado e sua aba correspondente
+        botao.classList.add("ativo");
+        abas[indice].classList.add("ativo");
+    });
+});
